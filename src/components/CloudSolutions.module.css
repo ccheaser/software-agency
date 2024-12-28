@@ -1,0 +1,93 @@
+/* CloudSolutions.module.css */
+
+/* Renk Değişkenleri */
+:root {
+  --prime: #ff6e48;
+  --ciBlue: #00fff1;
+  --ciRed: #ff00aa;
+  --ciWhite: #ffffff;
+  --ciGreen: #46fcb4;
+  --ciSecond: #0c1016;
+  --xPos: 0px;
+  --yPos: 0px;
+}
+
+/* Kart Hover Efekti */
+.cardHoverEffect {
+  position: relative;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8));
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  border-image: linear-gradient(45deg, rgba(59,130,246,0.5), transparent) 1;
+  border-radius: 0.5rem;
+  transition: all 0.15s;
+  overflow: hidden;
+}
+
+.cardHoverEffect:hover {
+  transform: scale(0.97);
+}
+
+.cardHoverEffect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: radial-gradient(
+    60rem circle at var(--xPos) var(--yPos),
+    rgba(0, 255, 241, 0.1),
+    transparent 35%
+  );
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+}
+
+.cardHoverEffect:hover::before {
+  opacity: 1;
+}
+
+/* Kart İçeriği */
+.cardContent {
+  background-color: #13161c;
+  border-radius: inherit;
+  transition: all 0.25s;
+  height: calc(100% - 0.1rem);
+  width: calc(100% - 0.1rem);
+}
+
+/* Sol Taraf Metinleri */
+.textSection {
+  color: white;
+}
+
+.title {
+  font-size: 4rem; /* Tailwind'ın text-4xl karşılığı */
+  font-weight: 700; /* Bold */
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  color: #d1d5db; /* Tailwind'ın text-gray-300 karşılığı */
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  font-size: 1.125rem; /* Tailwind'ın text-lg karşılığı */
+}
+
+/* Buton */
+.button {
+  border: 2px solid #3b82f6; /* Tailwind'ın border-blue-600 karşılığı */
+  color: #3b82f6; /* Tailwind'ın text-blue-600 karşılığı */
+  font-weight: 400; /* Normal */
+  padding: 0.75rem 1.5rem; /* py-3 px-6 */
+  border-radius: 9999px; /* Tailwind'ın rounded-full karşılığı */
+  transition: background-color 0.3s, color 0.3s;
+  align-self: flex-start;
+  width: auto;
+}
+
+.button:hover {
+  background-color: #3b82f6; /* Tailwind'ın hover:bg-blue-600 karşılığı */
+  color: #ffffff; /* Tailwind'ın hover:text-white karşılığı */
+}
